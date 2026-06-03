@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARCOSUY · Andamios de Obra Reforzados · Precios y Medidas</title>
+  <meta name="description" content="Andamios de obra y de pintor reforzados con caño de 2 mm, con memoria de cálculo aprobada. Fabricación propia, stock permanente y envíos a todo el país. Tablones metálicos, ruedas, barandas, patas regulables y vientos." />
+  <style>
+    :root {
+      --cyan: #069dec;
+      --bg: #0d1b2a;
+      --bg2: #0f2033;
+      --bg3: #111d2e;
+      --nav-bg: rgba(10,22,35,0.95);
+      --white: #ffffff;
+      --muted: #8ba3b8;
+      --card-bg: #0f2033;
+      --green: #25d366;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      height: 56px;
+      background: var(--nav-bg);
+      backdrop-filter: blur(8px);
+    }
+    .logo-img { display: flex; align-items: center; text-decoration: none; }
+    .logo-img img { height: 32px; width: auto; display: block; filter: brightness(0) invert(1); }
+    nav ul { display: flex; align-items: center; gap: 32px; list-style: none; }
+    nav ul a { color: var(--muted); text-decoration: none; font-size: .85rem; transition: color .2s; }
+    nav ul a:hover { color: var(--white); }
+    .btn-nav {
+      background: var(--cyan); color: #0a1620 !important;
+      padding: 8px 22px; border-radius: 999px;
+      font-weight: 700 !important; font-size: .85rem !important; transition: opacity .2s;
+    }
+    .btn-nav:hover { opacity: .85; }
+
+    /* ── HERO ── */
+    #hero {
+      position: relative; min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden; background: var(--bg);
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(to right, rgba(10,22,35,0.92) 0%, rgba(10,22,35,0.65) 60%, rgba(10,22,35,0.4) 100%),
+        url('img/hero.jpg') 60% center/cover no-repeat;
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative; z-index: 1;
+      padding: 120px 5% 80px; max-width: 1200px; width: 100%;
+      margin: 0 auto; padding-left: 12%;
+    }
+    .hero-badge {
+      display: inline-block; border: 1px solid var(--cyan); color: var(--cyan);
+      font-size: .7rem; letter-spacing: 2px; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 999px; margin-bottom: 28px;
+    }
+    .hero-content h1 {
+      font-size: clamp(2.6rem, 7vw, 6rem); font-weight: 900;
+      text-transform: uppercase; line-height: 1.02; letter-spacing: -1px;
+      margin-bottom: 28px; max-width: 900px;
+    }
+    .hero-content h1 .accent { color: var(--cyan); }
+    .hero-desc { color: var(--muted); font-size: 1rem; max-width: 480px; margin-bottom: 36px; line-height: 1.7; }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 64px; }
+    .btn-primary {
+      background: var(--cyan); color: #0a1620; padding: 13px 28px;
+      border-radius: 999px; font-weight: 700; font-size: .9rem;
+      text-decoration: none; transition: opacity .2s;
+    }
+    .btn-primary:hover { opacity: .85; }
+    .btn-outline {
+      background: transparent; color: var(--white); padding: 13px 28px;
+      border-radius: 999px; border: 1.5px solid rgba(255,255,255,.3);
+      font-weight: 600; font-size: .9rem; text-decoration: none; transition: border-color .2s;
+    }
+    .btn-outline:hover { border-color: var(--white); }
+    .hero-stats { display: flex; gap: 48px; flex-wrap: wrap; }
+    .hero-stat-num { font-size: 1.8rem; font-weight: 900; color: var(--cyan); line-height: 1; }
+    .hero-stat-label { font-size: .7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1.5px; margin-top: 4px; }
+
+    /* ── SECTIONS ── */
+    .section { padding: 100px 8%; }
+    .section:nth-child(even) { background: var(--bg2); }
+    .section:nth-child(odd)  { background: var(--bg); }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 900;
+      text-transform: uppercase; letter-spacing: -.5px; line-height: 1.1; margin-bottom: 18px;
+    }
+    .section-desc {
+      color: var(--muted); font-size: .97rem; max-width: 640px;
+      margin-bottom: 0; line-height: 1.7;
+    }
+
+    /* ── PRODUCT GRID ── */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 56px;
+    }
+    .product-grid.g3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .product-grid.g1 {
+      grid-template-columns: minmax(0, 460px);
+      justify-content: center;
+    }
+    .product-grid.g2 {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 800px;
+    }
+
+    /* ── PRODUCT CARD ── */
+    .product-card {
+      background: var(--bg3);
+      border: 1px solid rgba(6,157,236,.12);
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color .25s, transform .25s, box-shadow .25s;
+    }
+    .product-card:hover {
+      border-color: rgba(6,157,236,.4);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(6,157,236,.08);
+    }
+
+    /* imagen del producto */
+    .product-img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: #162333;
+      overflow: hidden;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .product-img img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      position: relative; z-index: 1;
+    }
+    .product-img .img-ph {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3rem; color: rgba(6,157,236,.2);
+      background: linear-gradient(135deg, #162333, #0d1b2a);
+      min-height: 0;
+    }
+    /* complementos: imágenes cuadradas */
+    #complementos .product-img { aspect-ratio: 1 / 1; }
+
+    /* cuerpo de la card */
+    .product-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      flex-grow: 1;
+    }
+
+    .product-header {}
+    .product-name {
+      font-size: 1.1rem; font-weight: 900;
+      text-transform: uppercase; letter-spacing: .3px; line-height: 1.2;
+      margin-bottom: 4px;
+    }
+    .product-tag {
+      font-size: .65rem; color: var(--cyan);
+      letter-spacing: 2px; text-transform: uppercase; font-weight: 700;
+    }
+
+    /* selector de medida */
+    .size-section {}
+    .size-label {
+      font-size: .65rem; color: var(--muted);
+      letter-spacing: 2px; text-transform: uppercase; font-weight: 600;
+      margin-bottom: 10px; display: block;
+    }
+    .size-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .size-pill {
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: 1.5px solid rgba(6,157,236,.25);
+      color: var(--muted);
+      font-size: .78rem;
+      font-weight: 700;
+      cursor: pointer;
+      background: transparent;
+      transition: all .15s;
+      font-family: inherit;
+      line-height: 1;
+    }
+    .size-pill:hover {
+      border-color: var(--cyan);
+      color: var(--white);
+    }
+    .size-pill.active {
+      background: var(--cyan);
+      border-color: var(--cyan);
+      color: #0a1620;
+    }
+    /* pill oferta: precio especial */
+    .size-pill.oferta {
+      border-color: rgba(255,110,20,.35);
+      color: rgba(255,130,40,.9);
+    }
+    .size-pill.oferta:hover {
+      border-color: rgba(255,110,20,.7);
+      color: #ff7828;
+    }
+    .size-pill.oferta.active {
+      background: #ff7828;
+      border-color: #ff7828;
+      color: #0a1620;
+    }
+
+    /* caja de precio */
+    .price-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+      background: rgba(6,157,236,.06);
+      border: 1px solid rgba(6,157,236,.15);
+      border-radius: 12px;
+      margin-top: auto;
+    }
+    .price-label-txt {
+      font-size: .62rem; color: var(--muted);
+      letter-spacing: 2px; text-transform: uppercase; font-weight: 600;
+    }
+    .price-medida {
+      font-size: .78rem; color: var(--white);
+      font-weight: 700; margin-top: 2px;
+    }
+    .price-value {
+      font-size: 1.5rem; font-weight: 900;
+      color: var(--cyan); line-height: 1; text-align: right;
+    }
+    .price-value.sin-precio {
+      font-size: .82rem; color: var(--muted); font-weight: 600;
+    }
+    @keyframes priceUpdate {
+      0%   { opacity: 0; transform: translateY(-6px) scale(.95); }
+      100% { opacity: 1; transform: translateY(0)    scale(1);   }
+    }
+    .price-value.updating {
+      animation: priceUpdate .22s ease-out forwards;
+    }
+    .price-antes {
+      font-size: .75rem; color: var(--muted); text-decoration: line-through;
+      text-align: right; margin-top: 2px;
+    }
+    .precios-nota {
+      text-align: center; color: var(--muted);
+      font-size: .8rem; margin-top: 28px; letter-spacing: .3px;
+    }
+
+    /* ── UBICACIÓN ── */
+    .location-tag {
+      display: block; color: var(--cyan); font-size: 1.05rem;
+      font-weight: 800; letter-spacing: .3px; margin-bottom: 8px;
+    }
+    .map-wrap {
+      width: 100%; max-width: 520px; margin: 0;
+      display: flex; flex-direction: column; align-items: flex-start; gap: 16px;
+    }
+    .map-frame {
+      width: 100%; aspect-ratio: 4 / 3;
+      border-radius: 14px; overflow: hidden;
+      border: 1px solid rgba(6,157,236,.18);
+      box-shadow: 0 6px 24px rgba(0,0,0,.22);
+    }
+    .map-frame iframe {
+      width: 100%; height: 100%; border: 0; display: block;
+      filter: grayscale(.15) contrast(1.02);
+    }
+    .map-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--cyan); text-decoration: none;
+      font-size: .92rem; font-weight: 700;
+      padding: 10px 20px; border: 1.5px solid rgba(6,157,236,.4);
+      border-radius: 999px;
+      transition: background .2s, border-color .2s, color .2s;
+    }
+    .map-link:hover {
+      background: var(--cyan); color: #0a1620; border-color: var(--cyan);
+    }
+    .map-link svg { width: 16px; height: 16px; fill: currentColor; }
+
+    /* botón CTA */
+    .product-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 16px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #069dec 0%, #25d366 100%);
+      color: #fff;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .4px;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: filter .2s, transform .2s;
+    }
+    .product-cta:hover { filter: brightness(1.08); transform: translateY(-1px); }
+    .product-cta svg { width: 15px; height: 15px; fill: #fff; flex-shrink: 0; }
+
+    /* nota informativa */
+    .info-note {
+      padding: 14px 18px;
+      border-left: 2px solid var(--cyan);
+      background: rgba(6,157,236,.06);
+      color: var(--muted);
+      font-size: .85rem;
+      line-height: 1.6;
+      border-radius: 0 8px 8px 0;
+      margin-top: 4px;
+    }
+    .info-note strong { color: var(--white); }
+
+    /* ══ STAR CARDS · Andamios reforzados (productos estrella) ══ */
+    .product-grid.stars {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-top: 56px;
+    }
+    .star-card {
+      position: relative;
+      background:
+        radial-gradient(130% 120% at 50% 0%, rgba(6,157,236,.14), transparent 55%),
+        var(--bg3);
+      border: 1.5px solid rgba(6,157,236,.45);
+      border-radius: 22px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 0 0 1px rgba(6,157,236,.08), 0 18px 50px rgba(6,157,236,.12);
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+    }
+    .star-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--cyan);
+      box-shadow: 0 0 0 1px rgba(6,157,236,.22), 0 26px 70px rgba(6,157,236,.22);
+    }
+    /* badge "producto estrella" */
+    .star-badge {
+      position: absolute; top: 16px; left: 16px; z-index: 5;
+      display: inline-flex; align-items: center; gap: 6px;
+      background: linear-gradient(90deg, #069dec, #25d366);
+      color: #04121e;
+      font-size: .62rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 7px 13px; border-radius: 999px;
+      box-shadow: 0 6px 18px rgba(6,157,236,.45);
+    }
+    .star-badge svg { width: 13px; height: 13px; fill: #04121e; }
+    /* panel claro de catálogo para destacar el producto */
+    .star-card .product-img {
+      aspect-ratio: 16 / 11;
+      background: linear-gradient(160deg, #ffffff 0%, #eaf2f7 70%, #d7e4ec 100%);
+    }
+    .star-card .product-img img {
+      object-fit: cover;
+      padding: 0;
+    }
+    .star-card .product-img .img-ph {
+      background: linear-gradient(160deg, #f3f7fa, #dbe6ee);
+      color: rgba(6,157,236,.35);
+    }
+    .star-card .product-body { padding: 28px 28px 30px; gap: 18px; }
+    .star-card .product-name { font-size: 1.5rem; }
+    .star-card .product-tag { color: #25d366; }
+    /* lista de specs */
+    .star-feats { list-style: none; display: flex; flex-direction: column; gap: 12px; margin: 2px 0; }
+    .star-feats li { display: flex; gap: 11px; align-items: center; font-size: .98rem; color: var(--white); font-weight: 700; line-height: 1.35; }
+    .star-feats li svg { width: 20px; height: 20px; stroke: var(--green); fill: none; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+    .star-feats li strong { color: var(--white); font-weight: 700; }
+    /* desplegable "Especificaciones" */
+    .specs { border-top: 1px solid rgba(6,157,236,.15); padding-top: 14px; }
+    .specs > summary {
+      list-style: none; cursor: pointer; user-select: none;
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: .7rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;
+      color: var(--cyan);
+    }
+    .specs > summary::-webkit-details-marker { display: none; }
+    .specs > summary:hover { color: var(--white); }
+    .specs .chev { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; transition: transform .25s; }
+    .specs[open] > summary .chev { transform: rotate(180deg); }
+    .specs-list { list-style: none; margin-top: 12px; display: flex; flex-direction: column; gap: 9px; }
+    .specs-list li { display: flex; gap: 10px; align-items: flex-start; font-size: .85rem; color: var(--muted); line-height: 1.45; }
+    .specs-list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--cyan); flex-shrink: 0; margin-top: 7px; }
+    .star-card .price-value { font-size: 1.95rem; }
+
+    /* ── FEATURE LIST ── */
+    .feature-list { list-style: none; }
+    .feature-list li { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; font-size: .95rem; color: var(--muted); line-height: 1.5; }
+    .feature-list li::before { content: ''; display: block; flex-shrink: 0; width: 6px; height: 6px; border-radius: 50%; background: var(--cyan); margin-top: 7px; }
+    .feature-list li strong { color: var(--white); }
+
+    /* ── BENEFITS ── */
+    .benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 56px; }
+    .benefit-card { background: var(--bg3); border: 1px solid rgba(6,157,236,.1); border-radius: 14px; padding: 32px 28px; }
+    .benefit-icon { width: 48px; height: 48px; border-radius: 12px; background: rgba(6,157,236,.12); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+    .benefit-icon svg { width: 24px; height: 24px; stroke: var(--cyan); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .benefit-card h3 { font-size: 1rem; font-weight: 800; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 10px; }
+    .benefit-card p { color: var(--muted); font-size: .88rem; line-height: 1.65; }
+
+    /* ── MEMORIA DE CÁLCULO ── */
+    #memoria {
+      position: relative;
+      background:
+        linear-gradient(rgba(11,21,34,0.86), rgba(11,21,34,0.91)),
+        url('img/memoria-overlay.jpg') center center/cover no-repeat;
+    }
+    .mc-wrap { display: grid; grid-template-columns: 1.05fr 1fr; gap: 60px; align-items: center; margin-top: 8px; }
+    .mc-eyebrow { display: block; font-size: .72rem; color: var(--cyan); letter-spacing: 2.5px; text-transform: uppercase; font-weight: 700; margin-bottom: 16px; }
+    .mc-def {
+      margin-top: 26px; padding: 26px 30px;
+      border: 1.5px solid rgba(6,157,236,.45); border-radius: 18px;
+      background: rgba(6,157,236,.05); color: var(--white);
+      font-size: 1.08rem; line-height: 1.75;
+    }
+    .mc-def .accent-text { color: var(--cyan); font-weight: 700; font-style: italic; }
+    .mc-benefits { list-style: none; display: flex; flex-direction: column; gap: 26px; }
+    .mc-benefits li { display: flex; gap: 18px; align-items: flex-start; }
+    .mc-benefits .ck {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: rgba(37,211,102,.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .mc-benefits .ck svg { width: 20px; height: 20px; stroke: var(--green); fill: none; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+    .mc-benefits p { font-size: 1.16rem; color: var(--muted); line-height: 1.5; }
+    .mc-benefits p .hl { color: var(--cyan); font-weight: 800; }
+    @media (max-width: 900px) {
+      .mc-wrap { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    /* ── PRACTICIDAD MODULAR ── */
+    .mod-wrap { display: grid; grid-template-columns: 1fr 0.72fr; gap: 56px; align-items: center; margin-top: 8px; }
+    .mod-img { border-radius: 18px; overflow: hidden; border: 1px solid rgba(6,157,236,.18); box-shadow: 0 18px 50px rgba(0,0,0,.35); aspect-ratio: 4 / 5; }
+    .mod-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .mod-text .section-desc { margin-bottom: 8px; font-size: 1.12rem; line-height: 1.75; }
+    #practicidad .mc-benefits { gap: 18px; }
+    #practicidad .mc-benefits p { font-size: 1.3rem; }
+    @media (max-width: 900px) {
+      .mod-wrap { grid-template-columns: 1fr; gap: 32px; }
+      .mod-img { max-width: 440px; }
+    }
+
+    /* ── CONTACT ── */
+    #contacto { background: var(--bg3); padding: 100px 8%; }
+    .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .contact-label { font-size: .72rem; color: var(--cyan); letter-spacing: 2.5px; text-transform: uppercase; font-weight: 600; margin-bottom: 16px; }
+    .contact-title { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 900; text-transform: uppercase; letter-spacing: -.5px; line-height: 1.1; margin-bottom: 20px; }
+    .contact-desc { color: var(--muted); font-size: .97rem; line-height: 1.7; }
+    .contact-btns { display: flex; flex-direction: column; gap: 14px; }
+    .btn-whatsapp { display: flex; align-items: center; justify-content: center; gap: 10px; background: var(--green); color: #fff; padding: 15px 28px; border-radius: 999px; font-weight: 700; font-size: .95rem; text-decoration: none; transition: opacity .2s; }
+    .btn-whatsapp:hover { opacity: .88; }
+    .btn-whatsapp svg { width: 20px; height: 20px; fill: #fff; }
+    .btn-email { display: flex; align-items: center; justify-content: center; gap: 10px; background: transparent; color: var(--white); padding: 15px 28px; border-radius: 999px; border: 1.5px solid rgba(255,255,255,.25); font-weight: 600; font-size: .95rem; text-decoration: none; transition: border-color .2s; }
+    .btn-email:hover { border-color: var(--white); }
+
+    /* ── FOOTER ── */
+    footer { background: #091522; padding: 60px 8% 0; }
+    .footer-top { display: grid; grid-template-columns: 1.5fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.07); }
+    .footer-brand p { color: var(--muted); font-size: .85rem; margin-top: 10px; }
+    .social-links { display: flex; gap: 12px; margin-top: 18px; }
+    .social-links a { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 999px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); transition: background .2s, border-color .2s, transform .2s; }
+    .social-links a:hover { background: var(--cyan); border-color: var(--cyan); transform: translateY(-2px); }
+    .social-links svg { width: 18px; height: 18px; fill: var(--white); }
+    .social-links a:hover svg { fill: #0a1620; }
+    .footer-col h4 { font-size: .72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; font-weight: 600; margin-bottom: 18px; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul a { color: rgba(255,255,255,.6); text-decoration: none; font-size: .88rem; transition: color .2s; }
+    .footer-col ul a:hover { color: var(--white); }
+    .footer-col p { color: rgba(255,255,255,.6); font-size: .88rem; margin-bottom: 8px; }
+    .footer-col p a { color: rgba(255,255,255,.6); text-decoration: none; transition: color .2s; }
+    .footer-col p a:hover { color: var(--white); }
+    .footer-bottom { padding: 20px 0; text-align: center; color: rgba(255,255,255,.25); font-size: .78rem; }
+
+    /* ── FLOATING WA ── */
+    .wa-float { position: fixed; bottom: 28px; right: 28px; z-index: 500; width: 52px; height: 52px; background: var(--green); border-radius: 999px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,.4); transition: transform .2s; }
+    .wa-float:hover { transform: scale(1.08); }
+    .wa-float svg { width: 28px; height: 28px; fill: #fff; }
+
+    /* ── LIGHTBOX ── */
+    .product-img img { cursor: zoom-in; }
+    #lightbox {
+      position: fixed; inset: 0; z-index: 1000;
+      background: rgba(5,12,20,.93);
+      display: none; align-items: center; justify-content: center;
+      padding: 6vh 5vw; cursor: zoom-out;
+    }
+    #lightbox.open { display: flex; }
+    #lightbox img { max-width: 92vw; max-height: 88vh; border-radius: 12px; box-shadow: 0 24px 70px rgba(0,0,0,.6); cursor: default; }
+    #lightbox .lb-close {
+      position: absolute; top: 20px; right: 26px;
+      width: 46px; height: 46px; border-radius: 999px;
+      background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.25);
+      color: #fff; font-size: 1.6rem; line-height: 1; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; transition: background .2s;
+    }
+    #lightbox .lb-close:hover { background: rgba(255,255,255,.2); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1200px) {
+      .product-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 1000px) {
+      .product-grid.g3 { grid-template-columns: repeat(2, 1fr); }
+      .product-grid.g2 { grid-template-columns: repeat(2, 1fr); max-width: none; }
+    }
+    @media (max-width: 900px) {
+      .contact-inner { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      nav ul { display: none; }
+      .benefits-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .section { padding: 70px 6%; }
+      #hero { min-height: auto; }
+      .hero-content { padding: 100px 6% 60px; }
+      .product-grid,
+      .product-grid.g1,
+      .product-grid.g2,
+      .product-grid.stars { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; }
+      .benefits-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo-img">
+    <img loading="lazy" decoding="async" src="img/logo.png" alt="ARCOSUY" height="32" />
+  </a>
+  <ul>
+    <li><a href="#contacto" class="btn-nav">Consultar</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <span class="hero-badge">Andamios &middot; Con memoria de c&aacute;lculo &middot; Reforzados &middot; Fabricaci&oacute;n propia</span>
+    <h1>
+      <span class="accent">Seguridad</span><br>para tu obra
+    </h1>
+    <p class="hero-desc">
+      En cualquier proyecto de construcci&oacute;n, la seguridad de los trabajadores
+      es primordial. Por eso en ARCOSUY fabricamos andamios de primera calidad, bajo
+      los m&aacute;s altos est&aacute;ndares, para entregarte un producto seguro,
+      duradero y confiable.
+    </p>
+    <div class="hero-btns">
+      <a href="#andamios" class="btn-primary">Ver productos</a>
+      <a href="#contacto" class="btn-outline">Contactar</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">2 mm</div>
+        <div class="hero-stat-label">Ca&ntilde;o reforzado</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">Con memoria</div>
+        <div class="hero-stat-label">de c&aacute;lculo</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">Stock</div>
+        <div class="hero-stat-label">Permanente</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     ANDAMIOS
+══════════════════════════════════════════════════════ -->
+<section class="section" id="andamios">
+  <h2 class="section-title">Andamios reforzados</h2>
+  <p class="section-desc">
+    Estructuras modulares con ca&ntilde;o de 2 mm de espesor, soldadura MIG y terminaci&oacute;n
+    en convertidor grafito oscuro. Andamios de obra <strong>con memoria de c&aacute;lculo aprobada</strong>.
+  </p>
+
+  <div class="product-grid stars">
+
+    <!-- ANDAMIO DE OBRA · ESTRELLA -->
+    <div class="product-card star-card" data-product="andamio-obra">
+      <div class="product-img">
+        <img loading="lazy" decoding="async" src="img/andamio-obra-blanco.jpg" alt="Andamio de obra reforzado 2mm"
+             onerror="this.style.display='none'" />
+        <div class="img-ph">&#9642;</div>
+      </div>
+      <div class="product-body">
+        <div class="product-header">
+          <h3 class="product-name">Andamio de Obra</h3>
+          <span class="product-tag">Reforzado 2 mm</span>
+        </div>
+        <ul class="star-feats">
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Ideal para obras de gran envergadura</span></li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Estables</span></li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Con memoria de c&aacute;lculo</span></li>
+        </ul>
+        <details class="specs">
+          <summary>Especificaciones <svg class="chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></summary>
+          <ul class="specs-list">
+            <li>Ca&ntilde;o estructural de 2&Prime; + refuerzo interior en 1&Prime;</li>
+            <li>Soldadura MIG &middot; terminaci&oacute;n en grafito oscuro</li>
+            <li>M&oacute;dulo: 2 cuadros + 2 diagonales + 2 horizontales</li>
+          </ul>
+        </details>
+        <div class="size-section">
+          <span class="size-label">Medida del m&oacute;dulo</span>
+          <div class="size-pills">
+            <button class="size-pill active" data-medida="modulo" data-label="2.6 m largo &times; 2 m alto &times; 1.3 m ancho">2.6 m largo &times; 2 m alto &times; 1.3 m ancho</button>
+          </div>
+        </div>
+        <div class="price-box">
+          <p class="price-label-txt">Precio por m&oacute;dulo</p>
+          <p class="price-value sin-precio" data-price-display>Consult&aacute;</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ANDAMIO DE PINTOR · ESTRELLA -->
+    <div class="product-card star-card" data-product="andamio-pintor">
+      <div class="product-img">
+        <img loading="lazy" decoding="async" src="img/andamio-pintor-blanco.jpg" alt="Andamio de pintor reforzado 2mm"
+             onerror="this.style.display='none'" />
+        <div class="img-ph">&#9642;</div>
+      </div>
+      <div class="product-body">
+        <div class="product-header">
+          <h3 class="product-name">Andamio de Pintor</h3>
+          <span class="product-tag">Reforzado 2 mm</span>
+        </div>
+        <ul class="star-feats">
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Liviano y f&aacute;cil de trasladar</span></li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Con memoria de c&aacute;lculo</span></li>
+        </ul>
+        <details class="specs">
+          <summary>Especificaciones <svg class="chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></summary>
+          <ul class="specs-list">
+            <li>Ca&ntilde;o del cuadro de 1&frac34;&Prime; + refuerzo interior en 1&Prime;</li>
+            <li>Soldadura MIG &middot; terminaci&oacute;n en grafito oscuro</li>
+            <li>M&oacute;dulo: 2 cuadros H + 2 crucetas + 2 diagonales</li>
+          </ul>
+        </details>
+        <div class="size-section">
+          <span class="size-label">Medida del m&oacute;dulo</span>
+          <div class="size-pills">
+            <button class="size-pill active" data-medida="modulo" data-label="2 m largo &times; 2 m alto &times; 0.8 m ancho">2 m largo &times; 2 m alto &times; 0.8 m ancho</button>
+          </div>
+        </div>
+        <div class="price-box">
+          <p class="price-label-txt">Precio por m&oacute;dulo</p>
+          <p class="price-value sin-precio" data-price-display>Consult&aacute;</p>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /product-grid andamios stars -->
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     COMPLEMENTOS
+══════════════════════════════════════════════════════ -->
+<section class="section" id="complementos">
+  <h2 class="section-title">Complementos</h2>
+  <p class="section-desc">
+    Todo lo que necesit&aacute;s para completar tu andamio con m&aacute;s movilidad y seguridad.
+  </p>
+
+  <div class="product-grid g3">
+
+    <!-- TABLÓN DE OBRA -->
+    <div class="product-card" data-product="tablon-obra">
+      <div class="product-img">
+        <img loading="lazy" decoding="async" src="img/tablon-obra-foto.jpg" alt="Tablón metálico de obra reforzado"
+             onerror="this.style.display='none'" />
+        <div class="img-ph">&#9642;</div>
+      </div>
+      <div class="product-body">
+        <div class="product-header">
+          <h3 class="product-name">Tabl&oacute;n de Obra</h3>
+          <span class="product-tag">Met&aacute;lico reforzado</span>
+        </div>
+        <details class="specs">
+          <summary>Especificaciones <svg class="chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></summary>
+          <ul class="specs-list">
+            <li>Estructura tubular de 60&times;40 mm con terminaci&oacute;n en metal desplegable.</li>
+          </ul>
+        </details>
+        <div class="size-section">
+          <span class="size-label">Medida</span>
+          <div class="size-pills">
+            <button class="size-pill active" data-medida="obra" data-label="2.6 m largo &times; 0.3 m ancho">2.6 m largo &times; 0.3 m ancho</button>
+          </div>
+        </div>
+        <div class="price-box">
+          <p class="price-label-txt">Precio unitario</p>
+          <p class="price-value sin-precio" data-price-display>Consult&aacute;</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TABLÓN DE PINTOR -->
+    <div class="product-card" data-product="tablon-pintor">
+      <div class="product-img">
+        <img loading="lazy" decoding="async" src="img/tablon-pintor-foto.jpg" alt="Tablón de pintor reforzado"
+             onerror="this.style.display='none'" />
+        <div class="img-ph">&#9642;</div>
+      </div>
+      <div class="product-body">
+        <div class="product-header">
+          <h3 class="product-name">Tabl&oacute;n de Pintor</h3>
+          <span class="product-tag">Met&aacute;lico reforzado</span>
+        </div>
+        <details class="specs">
+          <summary>Especificaciones <svg class="chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></summary>
+          <ul class="specs-list">
+            <li>Estructura tubular de 60&times;40 mm con terminaci&oacute;n en metal desplegable.</li>
+          </ul>
+        </details>
+        <div class="size-section">
+          <span class="size-label">Medida</span>
+          <div class="size-pills">
+            <button class="size-pill active" data-medida="pintor" data-label="2 m largo &times; 0.3 m ancho">2 m largo &times; 0.3 m ancho</button>
+          </div>
+        </div>
+        <div class="price-box">
+          <p class="price-label-txt">Precio unitario</p>
+          <p class="price-value sin-precio" data-price-display>Consult&aacute;</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RUEDAS CON FRENO -->
+    <div class="product-card" data-product="ruedas">
+      <div class="product-img">
+        <img loading="lazy" decoding="async" src="img/ruedas-foto.jpg" alt="Ruedas con freno reforzadas 200mm x4"
+             onerror="this.style.display='none'" />
+        <div class="img-ph">&#9642;</div>
+      </div>
+      <div class="product-body">
+        <div class="product-header">
+          <h3 class="product-name">Ruedas con Freno</h3>
+          <span class="product-tag">Reforzadas 200 mm</span>
+        </div>
+        <div class="size-section">
+          <span class="size-label">Presentaci&oacute;n</span>
+          <div class="size-pills">
+            <button class="size-pill active" data-medida="x4" data-label="Set x4 · 200 mm">Set x4 &middot; 200 mm</button>
+          </div>
+        </div>
+        <div class="info-note">
+          Ruedas reforzadas de 200 mm con freno integrado. Permiten desplazar el andamio con total practicidad y, al activar el freno, queda fijo y sin movimiento.
+        </div>
+        <div class="price-box">
+          <p class="price-label-txt">Precio set</p>
+          <p class="price-value sin-precio" data-price-display>Consult&aacute;</p>
+        </div>      </div>
+    </div>
+
+    <!-- BARANDA -->
+    <div class="product-card" data-product="baranda">
+      <div class="product-img">
+        <img loading="lazy" decoding="async" src="img/barandas.jpg" alt="Baranda de andamios de obra tubular reforzada 2mm"
+             onerror="this.style.display='none'" />
+        <div class="img-ph">&#9642;</div>
+      </div>
+      <div class="product-body">
+        <div class="product-header">
+          <h3 class="product-name">Baranda de Obra</h3>
+          <span class="product-tag">Tubular reforzada 2 mm</span>
+        </div>
+        <div class="size-section">
+          <span class="size-label">Medida</span>
+          <div class="size-pills">
+            <button class="size-pill active" data-medida="std" data-label="1.30 × 0.90 m">1.30 &times; 0.90 m</button>
+          </div>
+        </div>
+        <div class="info-note">
+          <strong>Precio incluye:</strong> Barandas + dos laterales de 2.59 m para unificar estructura.
+        </div>
+        <div class="price-box">
+          <p class="price-label-txt">Precio</p>
+          <p class="price-value sin-precio" data-price-display>Consult&aacute;</p>
+        </div>      </div>
+    </div>
+
+    <!-- PATAS REGULABLES -->
+    <div class="product-card" data-product="patas">
+      <div class="product-img">
+        <img loading="lazy" decoding="async" src="img/patas.jpg" alt="Patas regulables galvanizadas para andamios"
+             onerror="this.style.display='none'" />
+        <div class="img-ph">&#9642;</div>
+      </div>
+      <div class="product-body">
+        <div class="product-header">
+          <h3 class="product-name">Patas Regulables</h3>
+          <span class="product-tag">Galvanizadas</span>
+        </div>
+        <div class="size-section">
+          <span class="size-label">Altura</span>
+          <div class="size-pills">
+            <button class="size-pill active" data-medida="070" data-label="0.70 m">0.70 m</button>
+          </div>
+        </div>
+        <div class="info-note">
+          Pata galvanizada regulable de 0.70 m. Nivel&aacute; el andamio en terrenos irregulares.
+        </div>
+        <div class="price-box">
+          <p class="price-label-txt">Precio</p>
+          <p class="price-value sin-precio" data-price-display>Consult&aacute;</p>
+        </div>      </div>
+    </div>
+
+    <!-- VIENTOS -->
+    <div class="product-card" data-product="vientos">
+      <div class="product-img">
+        <img loading="lazy" decoding="async" src="img/vientos-foto.jpg" alt="Vientos para andamios"
+             onerror="this.style.display='none'" />
+        <div class="img-ph">&#9642;</div>
+      </div>
+      <div class="product-body">
+        <div class="product-header">
+          <h3 class="product-name">Vientos</h3>
+          <span class="product-tag">Para andamios</span>
+        </div>
+        <div class="size-section">
+          <span class="size-label">Presentaci&oacute;n</span>
+          <div class="size-pills">
+            <button class="size-pill active" data-medida="u" data-label="Por unidad">Por unidad</button>
+          </div>
+        </div>
+        <div class="price-box">
+          <p class="price-label-txt">Precio</p>
+          <p class="price-value sin-precio" data-price-display>Consult&aacute;</p>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /product-grid complementos -->
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     MEMORIA DE CÁLCULO
+══════════════════════════════════════════════════════ -->
+<section class="section" id="memoria">
+  <div class="mc-wrap">
+    <div class="mc-intro">
+      <span class="mc-eyebrow">Seguridad certificada</span>
+      <h2 class="section-title">&iquest;Qu&eacute; significa que tu<br>andamio tenga<br>memoria de c&aacute;lculo?</h2>
+      <div class="mc-def">
+        La <span class="accent-text">memoria de c&aacute;lculo</span> es un estudio t&eacute;cnico
+        realizado por profesionales, que certifica que el andamio cumpla con las normas de
+        seguridad y soporte las cargas adecuadas en entornos de obra.
+      </div>
+    </div>
+    <ul class="mc-benefits">
+      <li>
+        <span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+        <p>Un andamio con memoria de c&aacute;lculo <span class="hl">previene accidentes</span> causados por fallos estructurales.</p>
+      </li>
+      <li>
+        <span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+        <p><span class="hl">Asegura estabilidad</span> en terrenos de obra exigentes.</p>
+      </li>
+      <li>
+        <span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+        <p><span class="hl">Cumple con normativas</span> establecidas de seguridad laboral.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     PRACTICIDAD MODULAR
+══════════════════════════════════════════════════════ -->
+<section class="section" id="practicidad">
+  <div class="mod-wrap">
+    <div class="mod-text">
+      <span class="mc-eyebrow">Sistema modular</span>
+      <h2 class="section-title">Practicidad modular</h2>
+      <p class="section-desc">
+        Nuestros andamios de obra son modulares: se apilan <strong style="color:var(--white)">hasta 4 m&oacute;dulos</strong>
+        para alcanzar grandes alturas en obras de gran envergadura. Un sistema simple de montar,
+        con la m&aacute;xima seguridad y estabilidad para que tu equipo trabaje con total tranquilidad.
+      </p>
+      <ul class="mc-benefits" style="margin-top:26px">
+        <li>
+          <span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <p>Hasta <span class="hl">4 m&oacute;dulos apilables</span> para mayores alturas.</p>
+        </li>
+        <li>
+          <span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <p><span class="hl">Montaje simple</span>, sin complicaciones.</p>
+        </li>
+        <li>
+          <span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <p>M&aacute;xima <span class="hl">seguridad y estabilidad</span> en altura.</p>
+        </li>
+      </ul>
+    </div>
+    <div class="mod-img">
+      <img loading="lazy" decoding="async" src="img/modular.jpg" alt="Andamio de obra modular apilado en varios cuerpos" />
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     BENEFICIOS
+══════════════════════════════════════════════════════ -->
+<section class="section" id="beneficios">
+  <h2 class="section-title">Por qu&eacute; elegir<br>nuestros andamios</h2>
+  <p class="section-desc">
+    En ARCOSUY nos comprometemos a cumplir con est&aacute;ndares de calidad para entregar
+    un andamio seguro que proteja la integridad f&iacute;sica de los trabajadores.
+  </p>
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <div class="benefit-icon">
+        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <h3>Fabricaci&oacute;n propia</h3>
+      <p>Producimos cada andamio en planta con soldadura MIG y terminaci&oacute;n en convertidor grafito oscuro, bajo un control de calidad exhaustivo en cada lote.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+      </div>
+      <h3>Andamios aprobados</h3>
+      <p>Cada m&oacute;dulo cuenta con una certificaci&oacute;n otorgada por un equipo de profesionales calificados, que garantiza la integridad y la seguridad estructural de nuestros productos.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </div>
+      <h3>Stock permanente y env&iacute;os</h3>
+      <p>Stock todo el a&ntilde;o de andamios y sus respectivos complementos. Disponibilidad para retiro inmediato o env&iacute;o en todo Uruguay.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="contact-inner">
+    <div>
+      <h2 class="contact-title">Coordin&aacute; tu pedido<br>hoy mismo</h2>
+      <p class="contact-desc">Te respondemos de inmediato para gestionar la entrega o retiro de tus andamios.</p>
+    </div>
+    <div class="contact-btns">
+      <a href="https://wa.me/59892630761?text=Hola%2C%20consulto%20precios%20de%20andamios" target="_blank" class="btn-whatsapp">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp &middot; 092 630 761
+      </a>
+      <a href="mailto:ventas@arcosuy.com" class="btn-email">ventas@arcosuy.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="#" class="logo-img">
+        <img loading="lazy" decoding="async" src="img/logo.png" alt="ARCOSUY" height="28" />
+      </a>
+      <p>Andamios de obra reforzados &middot; Uruguay</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com/arcosuy/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/Arcosuy" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg>
+        </a>
+        <a href="https://arcosuy.com" target="_blank" rel="noopener" aria-label="Sitio web">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <p><a href="https://wa.me/59892630761?text=Hola%2C%20consulto%20precios%20de%20andamios" target="_blank" rel="noopener">WhatsApp 092 630 761</a></p>
+      <p><a href="mailto:ventas@arcosuy.com">ventas@arcosuy.com</a></p>
+      <p><a href="https://arcosuy.com" target="_blank" rel="noopener">arcosuy.com</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">&copy; ARCOSUY &middot; Todos los derechos reservados</div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/59892630761?text=Hola%2C%20consulto%20precios%20de%20andamios" target="_blank" class="wa-float" title="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" aria-hidden="true">
+  <button class="lb-close" aria-label="Cerrar">&times;</button>
+  <img src="" alt="" />
+</div>
+
+<script>
+  // ─── COMPLETAR PRECIOS ────────────────────────────────────────────────────────
+  // Ingresá el precio (número entero en pesos) por cada medida.
+  // Dejá null para mostrar "Consultá" en esa medida.
+  // Ejemplo: 'obra': 4300  →  mostrará $4.300
+  const PRECIOS = {
+    'andamio-obra':   { 'modulo': 7400 },
+    'andamio-pintor': { 'modulo': 6100 },
+    'tablon-obra':    { 'obra': 4300 },
+    'tablon-pintor':  { 'pintor': 4100 },
+    'ruedas':         { 'x4': 8400 },
+    'baranda':        { 'std': 4800 },
+    'patas':          { '070': 2100 },
+    'vientos':        { 'u': 4100 },
+  };
+  // ─────────────────────────────────────────────────────────────────────────────
+
+  // Precio anterior (tachado), opcional por producto/medida
+  const ANTES = {
+  };
+
+  const WA_BASE = 'https://wa.me/59892630761?text=';
+  const WA_MSG = {
+    'andamio-obra':   (l) => `Hola, consulto precio del andamio de obra reforzado (módulo ${l})`,
+    'andamio-pintor': (l) => `Hola, consulto precio del andamio de pintor reforzado (módulo ${l})`,
+    'tablon-obra':    (l) => `Hola, consulto precio del tablón metálico de obra ${l}`,
+    'tablon-pintor':  (l) => `Hola, consulto precio del tablón de pintor ${l}`,
+    'ruedas':         (l) => `Hola, consulto precio de las ruedas con freno reforzadas 200mm (${l})`,
+    'baranda':        (l) => `Hola, consulto precio de la baranda de obra tubular reforzada 2mm (${l})`,
+    'patas':          (l) => `Hola, consulto precio de las patas regulables ${l}`,
+    'vientos':        (l) => `Hola, consulto precio de los vientos para andamios (${l})`,
+  };
+
+  function formatPrecio(n) {
+    return '$ ' + n.toLocaleString('es-UY');
+  }
+
+  function updateCard(card, medida, label) {
+    const productId   = card.dataset.product;
+    const priceEl     = card.querySelector('[data-price-display]');
+    const medidaEl    = card.querySelector('[data-medida-display]');
+    const ctaEl       = card.querySelector('[data-cta]');
+
+    // medida display
+    if (medidaEl) medidaEl.innerHTML = label;
+
+    // precio
+    const precio = PRECIOS[productId]?.[medida];
+    priceEl.classList.remove('updating');
+    void priceEl.offsetWidth; // reflow para reiniciar animación
+    if (precio !== null && precio !== undefined) {
+      priceEl.textContent = formatPrecio(precio);
+      priceEl.classList.remove('sin-precio');
+    } else {
+      priceEl.textContent = 'Consultá';
+      priceEl.classList.add('sin-precio');
+    }
+    priceEl.classList.add('updating');
+
+    // precio anterior (tachado)
+    const antesEl = card.querySelector('[data-price-antes]');
+    if (antesEl) {
+      const antes = ANTES[productId]?.[medida];
+      if (antes) {
+        antesEl.textContent = formatPrecio(antes);
+        antesEl.style.display = '';
+      } else {
+        antesEl.style.display = 'none';
+      }
+    }
+
+    // CTA WhatsApp
+    if (ctaEl) {
+      const plain = label.replace(/&times;/g, 'x').replace(/&middot;/g, '·').replace(/<[^>]*>/g, '');
+      const msgFn = WA_MSG[productId];
+      const msg   = msgFn ? msgFn(plain) : `Hola, consulto precio de ${plain}`;
+      ctaEl.href  = WA_BASE + encodeURIComponent(msg);
+    }
+  }
+
+  function initCards() {
+    document.querySelectorAll('.product-card[data-product]').forEach(card => {
+      const pills = card.querySelectorAll('.size-pill');
+
+      pills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          pills.forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+          updateCard(card, pill.dataset.medida, pill.dataset.label);
+        });
+      });
+
+      // inicializar con el primer pill activo
+      const firstPill = card.querySelector('.size-pill.active') || pills[0];
+      if (firstPill) updateCard(card, firstPill.dataset.medida, firstPill.dataset.label);
+    });
+  }
+
+  initCards();
+
+  // ─── LIGHTBOX (ver imágenes ampliadas) ───
+  (function(){
+    const lb = document.getElementById('lightbox');
+    if (!lb) return;
+    const lbImg = lb.querySelector('img');
+    function open(src, alt){
+      lbImg.src = src;
+      lbImg.alt = alt || '';
+      lb.classList.add('open');
+      lb.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+    function close(){
+      lb.classList.remove('open');
+      lb.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+    document.querySelectorAll('.product-img img').forEach(img => {
+      img.addEventListener('click', () => open(img.currentSrc || img.src, img.alt));
+    });
+    lb.addEventListener('click', close);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+  })();
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      const href = link.getAttribute('href');
+      if (!href || href === '#') return;
+      const target = document.getElementById(href.slice(1));
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      history.replaceState(null, '', href);
+    });
+  });
+</script>
+
+</body>
+</html>

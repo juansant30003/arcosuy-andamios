@@ -1,0 +1,13 @@
+# Archivos internos / desarrollo (no van al sitio publicado)
+.claude/
+serve.ps1
+CLAUDE.md
+.deploy.ps1
+node-portable/
+.last-deploy-hash
+
+# Capturas de preview (no van al sitio)
+pv-*.png
+slice-*.png
+__preview_tmp.html
+preview-full.png
